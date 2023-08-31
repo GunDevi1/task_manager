@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container mt-5">
-        <a href="{{ route('task.create') }}" class="btn btn-outline-success mb-3">Добавить задачу</a>
+        <a href="{{ route('task.create') }}" class="btn btn-outline-primary mb-3">Добавить задачу</a>
 
         <table class="table">
             <thead>
