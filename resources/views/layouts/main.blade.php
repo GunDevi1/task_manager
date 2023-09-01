@@ -12,29 +12,29 @@
     <title>Задачи</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg mb-5" style="background-color: #708CD5;">
     <div class="container-fluid container">
-        <a class="navbar-brand">Tusk</a>
+        <a class="navbar-brand text-white">Tusk</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="{{ route('main.index') }}">Главная</a>
-                <a class="nav-link active" aria-current="page" href="{{ route('task.index') }}">Мои задачи</a>
-                <a class="nav-link active" aria-current="page" href="{{ route('done.index') }}">Выполненные задачи</a>
+                <a class="nav-link active text-white" aria-current="page" href="{{ route('main.index') }}">Главная</a>
+                <a class="nav-link active text-white" aria-current="page" href="{{ route('task.index') }}">Мои задачи</a>
+                <a class="nav-link active text-white" aria-current="page" href="{{ route('done.index') }}">Выполненные задачи</a>
             </div>
             <div class="navbar-nav">
                 @guest()
-                    <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Войти</a>
+                    <a class="nav-link active text-white" aria-current="page" href="{{ route('login') }}">Войти</a>
                 @endguest
                 @auth()
                     @if (auth()->user()->role)
-                        <a class="nav-link active" aria-current="page" href="{{ route('admin.index') }}">Админ панель</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{{ route('admin.index') }}">Админ панель</a>
                     @endif
-                    <form action="{{ route('logout') }}" method="post">
+                    <form action="{{ route('logout') }}" method="post" class="m-0">
                         @csrf
-                        <input type="submit" value="Выйти" class="border-0 bg-transparent nav-link active">
+                        <input type="submit" value="Выйти" class="border-0 bg-transparent nav-link active text-white">
                     </form>
                 @endauth
             </div>
