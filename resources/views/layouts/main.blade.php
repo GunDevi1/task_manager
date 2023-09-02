@@ -44,5 +44,25 @@
 
 @yield('content')
 
+<footer class="footer bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex align-items-center justify-content-center">
+                <h4 class="mr-3 mb-0">TUSK</h4>
+                <a href="#" class="text-white text-decoration-none mx-3">Контакты</a>
+                <a href="#" class="text-white text-decoration-none mx-3">О нас</a>
+                <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+            </div>
+        </div>
+        <!-- Добавляем нижний бордер -->
+        <hr class="my-4 border-light">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2023 TUSK. Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
