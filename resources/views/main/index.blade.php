@@ -1,7 +1,8 @@
 @extends('layouts.main')
+@section('title', 'Tusk')
 
 @section('content')
-    <div class="content min-vh-100">
+
         <div class="container">
             <div class="row content d-flex align-items-center mb-5">
                 <div class="col-md-6 text-center mb-5">
@@ -83,7 +84,5 @@
                 </div>
             </div>
         </section>
-
-    </div>
 
 @endsection
