@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('title', 'Выполненные задачи')
+
 @section('content')
 
     <div class="container mt-5">

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/68de43edb0.js" crossorigin="anonymous"></script>
     <link rel="icon" href="{{ asset('walrus.ico') }}">
-    <title>Задачи</title>
+    <title>@yield('title')</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg mb-5" style="background-color: #708CD5;">
@@ -42,7 +42,9 @@
     </div>
 </nav>
 
-@yield('content')
+    <div class="content min-vh-100">
+        @yield('content')
+    </div>
 
 <footer class="footer bg-dark text-light py-4">
     <div class="container">
