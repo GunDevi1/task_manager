@@ -32,20 +32,26 @@
                             <form action="{{ route('done.attribute', $done_task->id) }}" method="post" class="m-0">
                                 @csrf
                                 @method('patch')
-                                <button type="submit" class="bg-transparent border-0">
-                                    <i class="fa-solid fa-x text-danger fs-3"></i>
+                                <button type="submit" class="btn-done">
+                                    <i class="fa-solid fa-x"></i>
                                 </button>
                             </form>
                         </td>
                         <td style="max-width: 200px; wrap-option: wrap;"> <div class="mb-2 fs-5">{{ $done_task->title }}</div> <div>{{ $done_task->content }}</div> </td>
                         <td class="text-center">
-                            <form action="{{ route('done.destroy', $done_task->id) }}" method="post" class="m-0">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="bg-transparent border-0">
-                                    <i class="fa-solid fa-trash text-danger fs-4" role="button"></i>
-                                </button>
-                            </form>
+                            <div class="options-group">
+                                <button type="button" id="group-button" class="bg-transparent border-0"><i
+                                        class="fa-solid fa-ellipsis-vertical fs-4"></i></button>
+                                <div class="options" id="block-options">
+                                    <form action="{{ route('done.destroy', $done_task->id) }}" method="post" class="m-0">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="bg-transparent border-0">
+                                            <i class="fa-solid fa-trash text-danger fs-4" role="button"></i>
+                                            <span>Удалить</span>
+                                        </button>
+                                    </form>
+                                </div>
                         </td>
                     </tr>
                 @endforeach

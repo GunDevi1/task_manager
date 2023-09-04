@@ -17,3 +17,34 @@
     color: #fff;
 }
 
+.btn-done {
+    background-color: #E2DFE8;
+    color: #E2DFE8;
+    border: unset;
+    border-radius: 2px;
+    padding: 7px;
+}
+
+.btn-done:hover {
+    color: #58555E;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    background-color: #F8FAFC;
+    padding: 7px 0;
+    padding-right: 25px;
+    padding-left: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    border-radius: 10px;
+    span {
+        margin-left: 10px;
+    }
+}
+
+.open {
+    display: block;
+}
+
