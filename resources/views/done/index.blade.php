@@ -22,7 +22,7 @@
                 </thead>
                 <tbody style="height: auto; vertical-align: top">
                 @foreach($done_tasks as $done_task)
-                    <tr>
+                    <tr class="element-to-hover">
                         @auth()
                             @if (auth()->user()->role)
                                 <th>{{ $done_task->id }}</th>
