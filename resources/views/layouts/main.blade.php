@@ -7,7 +7,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/68de43edb0.js" crossorigin="anonymous"></script>
     <link rel="icon" href="{{ asset('walrus.ico') }}">
     <title>@yield('title')</title>
 </head>
@@ -56,7 +55,6 @@
                 <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
             </div>
         </div>
-        <!-- Добавляем нижний бордер -->
         <hr class="my-4 border-light">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -66,5 +64,6 @@
     </div>
 </footer>
 
+<script src="https://kit.fontawesome.com/68de43edb0.js" crossorigin="anonymous"></script>
 </body>
 </html>

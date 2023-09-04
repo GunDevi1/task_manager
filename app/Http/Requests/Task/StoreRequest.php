@@ -23,7 +23,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'content' => 'nullable|string',
+            'content' => 'nullable|string|max:500',
             'user_id' => 'required|integer',
         ];
     }
@@ -32,8 +32,10 @@ class StoreRequest extends FormRequest
     {
         return [
             'title.required' => 'Это поле необходимо для заполнения',
+            'title.max' => 'Ваше название слишком длинное',
             'title.string' => 'Данные должны соответствовать строчному типу',
             'content.string' => 'Данные должны соответствовать строчному типу',
+            'content.max' => 'Ваше описание слишком длинное',
         ];
     }
 }
