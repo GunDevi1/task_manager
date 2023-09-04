@@ -48,3 +48,13 @@
     display: block;
 }
 
+#group-button {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+tr.element-to-hover:hover #group-button {
+    visibility: visible;
+    opacity: 1;
+}
