@@ -22,7 +22,7 @@
                 </thead>
                 <tbody style="height: auto; vertical-align: top">
                 @foreach($tasks as $task)
-                    <tr class="element-to-hover">
+                    <tr class="element-to-hover bg-priority-{{$task->priority}}">
                         @auth()
                             @if (auth()->user()->role)
                                 <th>{{ $task->id }}</th>
@@ -42,12 +42,15 @@
                             <div>{{ $task->content }}</div>
                         </td>
                         <td>
-                            <div class="options-group">
+                            <div class="options-group text-end">
                                 <button type="button" id="group-button" class="bg-transparent border-0"><i
                                         class="fa-solid fa-ellipsis-vertical fs-4"></i></button>
                                 <div class="options" id="block-options">
-                                    <a href="{{ route('task.edit', $task->id) }}" class="text-decoration-none text-black"><i class="fa-solid fa-pencil text-info fs-4"></i> <span>Изменить</span></a>
-                                    <form action="{{ route('task.destroy', $task->id) }}" method="post" class="m-0 mt-3">
+                                    <a href="{{ route('task.edit', $task->id) }}"
+                                       class="text-decoration-none text-black"><i
+                                            class="fa-solid fa-pencil text-info fs-4"></i> <span>Изменить</span></a>
+                                    <form action="{{ route('task.destroy', $task->id) }}" method="post"
+                                          class="m-0 mt-3">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="bg-transparent border-0">

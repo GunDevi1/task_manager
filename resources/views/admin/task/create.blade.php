@@ -38,11 +38,20 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Описание</label>
+                                <label for="exampleFormControlTextarea1">Описание</label>
                                 <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" placeholder="Введите описание.."></textarea>
                                 @error('content')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="priority" class="form-label">Задать приоритет</label>
+                                <select class="form-control" id="priority" name="priority">
+                                    @foreach($priorities as $value => $priority)
+                                        <option value="{{ $value }}">{{ $priority }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group">
