@@ -24,6 +24,14 @@
             </div>
 
             <div class="mb-3">
+                <label for="deadline" class="form-label">Срок выполнения</label>
+                <input type="datetime-local" class="form-control" id="deadline" name="deadline" value="{{ $task->deadline }}">
+                @error('deadline')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
                 <label for="priority" class="form-label">Задать приоритет</label>
                 <select class="form-select" id="priority" name="priority">
                     @foreach($priorities as $value => $priority)
