@@ -7,6 +7,10 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+.table {
+    --bs-table-bg: unset;
+}
+
 .send-button {
     border: 1px solid #708CD5;
     color: #A9BAE6;
@@ -18,11 +22,23 @@
 }
 
 .btn-done {
+    background-color: #F8FAFC;
+    color: #F8FAFC;
+    border: unset;
+    border-radius: 2px;
+    padding: 7px;
+}
+
+.btn-done-page {
     background-color: #E2DFE8;
     color: #E2DFE8;
     border: unset;
     border-radius: 2px;
     padding: 7px;
+}
+
+.btn-done-page:hover {
+    color: #58555E;
 }
 
 .btn-done:hover {
@@ -39,6 +55,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     border-radius: 10px;
+    z-index: 2;
     span {
         margin-left: 10px;
     }
@@ -52,9 +69,58 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 tr.element-to-hover:hover #group-button {
     visibility: visible;
     opacity: 1;
+}
+
+.bg-priority-1 {
+    background: #C8E6C9;
+    .btn-done {
+        background-color: #E2F3E3;
+        color: #E2F3E3;
+    }
+
+    .btn-done:hover {
+        color: #58555E;
+    }
+}
+
+.bg-priority-2 {
+    background: #FFDDA0;
+    .btn-done {
+        background-color: #FFFFE0;
+        color: #FFFFE0;
+    }
+
+    .btn-done:hover {
+        color: #58555E;
+    }
+}
+
+.bg-priority-3 {
+    background: #FFD180;
+    .btn-done {
+        background-color: #FFE4B5;
+        color: #FFE4B5;
+    }
+
+    .btn-done:hover {
+        color: #58555E;
+    }
+}
+
+.bg-priority-4 {
+    background: #FF6666;
+    .btn-done {
+        background-color: #FFD6D6;
+        color: #FFD6D6;
+    }
+
+    .btn-done:hover {
+        color: #58555E;
+    }
 }

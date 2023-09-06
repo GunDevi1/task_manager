@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('title', 'Добавить задачу')
+
 @section('content')
 
     <div class="container">
@@ -21,6 +23,15 @@
             </div>
 
             <div class="mb-3">
+                <label for="priority" class="form-label">Задать приоритет</label>
+                <select class="form-select" id="priority" name="priority">
+                    @foreach($priorities as $value => $priority)
+                        <option value="{{ $value }}">{{ $priority }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
                 <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
             </div>
 

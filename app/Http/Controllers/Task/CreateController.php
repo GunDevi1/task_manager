@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Task;
 
-use App\Http\Controllers\Controller;
-use App\Models\Task;
-use Illuminate\Http\Request;
+use App\Services\Task\TaskService;
 
-class CreateController extends Controller
+class CreateController extends BaseController
 {
     public function __invoke()
     {
-        return view('task.create');
+        $priorities = TaskService::getPriorities();
+        return view('task.create', compact('priorities'));
     }
 }

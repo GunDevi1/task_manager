@@ -10,9 +10,10 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $tasks = Task::all()
-            ->where('is_done', 0)
-            ->where('user_id', auth()->user()->id);
+        $tasks = Task::where('is_done', 0)
+            ->orderBy('priority', 'desc')
+            ->where('user_id', auth()->user()->id)
+            ->get();
 
         return view('task.index', compact('tasks'));
     }

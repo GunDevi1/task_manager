@@ -45,6 +45,15 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
+                            <div class="form-group">
+                                <label for="priority" class="form-label">Задать приоритет</label>
+                                <select class="form-control" id="priority" name="priority">
+                                    @foreach($priorities as $value => $priority)
+                                        <option value="{{ $value }}">{{ $priority }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                         <!-- /.card-body -->
 
