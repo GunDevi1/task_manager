@@ -40,6 +40,9 @@
                         <td style="max-width: 200px; wrap-option: wrap;">
                             <div class="mb-2 fs-5">{{ $task->title }}</div>
                             <div>{{ $task->content }}</div>
+                            @if($task->deadline)
+                                <div class="mt-3">Выполнить до {{ $task->deadline }}</div>
+                            @endif
                         </td>
                         <td>
                             <div class="options-group text-end">

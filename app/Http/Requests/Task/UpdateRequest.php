@@ -25,6 +25,20 @@ class UpdateRequest extends FormRequest
             'title' => 'required|string|max:255',
             'content' => 'nullable|string|max:500',
             'priority' => 'required|integer|in:1,2,3,4',
+            'deadline' => 'nullable|date|after:now|before_or_equal:'.now()->addYears(5)->format('Y-m-d'),
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Это поле необходимо для заполнения',
+            'title.max' => 'Ваше название слишком длинное',
+            'title.string' => 'Данные должны соответствовать строчному типу',
+            'content.string' => 'Данные должны соответствовать строчному типу',
+            'content.max' => 'Ваше описание слишком длинное',
+            'deadline.date' => 'Это должна быть дата',
+            'deadline.after' => 'Выберите корректную дату для дедлайна',
         ];
     }
 }
