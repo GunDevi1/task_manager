@@ -17,7 +17,7 @@
                     @endauth
                     <th scope="col" style="width: 50px;">Выполнено</th>
                     <th scope="col"></th>
-                    <th scope="col" colspan="2" class="text-center"></th>
+                    <th scope="col" class="text-center"></th>
                 </tr>
                 </thead>
                 <tbody style="height: auto; vertical-align: top">
@@ -32,14 +32,14 @@
                             <form action="{{ route('done.attribute', $done_task->id) }}" method="post" class="m-0">
                                 @csrf
                                 @method('patch')
-                                <button type="submit" class="btn-done">
+                                <button type="submit" class="btn-done-page">
                                     <i class="fa-solid fa-x"></i>
                                 </button>
                             </form>
                         </td>
                         <td style="max-width: 200px; wrap-option: wrap;"> <div class="mb-2 fs-5">{{ $done_task->title }}</div> <div>{{ $done_task->content }}</div> </td>
-                        <td class="text-center">
-                            <div class="options-group">
+                        <td>
+                            <div class="options-group text-end">
                                 <button type="button" id="group-button" class="bg-transparent border-0"><i
                                         class="fa-solid fa-ellipsis-vertical fs-4"></i></button>
                                 <div class="options" id="block-options">

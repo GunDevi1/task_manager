@@ -24,6 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'nullable|string|max:500',
+            'priority' => 'required|integer|in:1,2,3,4',
         ];
     }
 

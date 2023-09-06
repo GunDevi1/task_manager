@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('title', 'Обновить задачу')
+
 @section('content')
 
     <div class="container">
@@ -20,6 +22,16 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+
+            <div class="mb-3">
+                <label for="priority" class="form-label">Задать приоритет</label>
+                <select class="form-select" id="priority" name="priority">
+                    @foreach($priorities as $value => $priority)
+                        <option value="{{ $value }}" {{ $value == $task->priority ? 'selected' : '' }}>{{ $priority }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-outline-primary">Обновить</button>
         </form>
     </div>
