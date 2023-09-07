@@ -9,6 +9,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -66,6 +67,9 @@
                             </div>
                         </div>
                     </form>
+                    <div class="text-center mt-5">
+                        <a href="{{ route('google.login') }}" class="btn btn-outline-primary"><i class="fa-brands fa-google fs-5" style="margin-right: 5px"></i>Войти через Google</a>
+                    </div>
                 </div>
             </div>
         </div>

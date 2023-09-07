@@ -57,7 +57,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Auth', 'prefix' => 'auth/google'], function () {
+    Route::get('/', RedirectToGoogleController::class)->name('google.login');
+    Route::get('/callback', HandleGoogleCallbackController::class)->name('google.callback');
+});
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
