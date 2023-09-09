@@ -12,4 +12,24 @@ class IndexController extends Controller
     {
         return view('main.index');
     }
+
+    public function more()
+    {
+        return view('main.more');
+    }
+
+    public function about()
+    {
+        return view('main.about');
+    }
+
+    public function contacts()
+    {
+        return view('main.contacts');
+    }
+
+    public function policy()
+    {
+        return view('main.policy');
+    }
 }
