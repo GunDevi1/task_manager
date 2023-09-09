@@ -18,7 +18,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/more', 'IndexController@more')->name('main.more');
     Route::get('/policy', 'IndexController@policy')->name('main.policy');
     Route::get('/about', 'IndexController@about')->name('main.about');
-    Route::get('/contacts', 'IndexController@contacts')->name('main.contacts');
+    Route::group(['prefix' => 'contacts'], function () {
+        Route::get('/', 'IndexController@contacts')->name('main.contacts');
+        Route::post('/', SendReportController::class)->name('main.contacts.store');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Task', 'prefix' => 'tasks', 'middleware' => ['auth', 'verified']], function () {
@@ -58,6 +61,11 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::get('/user-{user}/edit', EditController::class)->name('admin.user.edit');
         Route::patch('/user-{user}', UpdateController::class)->name('admin.user.update');
         Route::delete('/user-{user}', DeleteController::class)->name('admin.user.destroy');
+    });
+
+    Route::group(['namespace' => 'Report', 'prefix' => 'reports'], function () {
+        Route::get('/', IndexController::class)->name('admin.report.index');
+        Route::delete('/{report}', DeleteController::class)->name('admin.report.destroy');
     });
 });
 
