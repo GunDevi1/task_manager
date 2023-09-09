@@ -12,12 +12,13 @@
 }
 
 .send-button {
+    background-color: #708CD5;
     border: 1px solid #708CD5;
-    color: #A9BAE6;
+    color: #fff;
 }
 
 .send-button:hover {
-    background-color: #708CD5;
+    background-color: #7F9FF1;
     color: #fff;
 }
 
@@ -56,12 +57,7 @@
     top: 100%;
     right: 0;
     background-color: #F8FAFC;
-    padding: 7px 0;
-    padding-right: 25px;
-    padding-left: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    border-radius: 10px;
     z-index: 2;
     span {
         margin-left: 10px;
@@ -70,8 +66,14 @@
 
 .option {
     display: flex;
-    margin-bottom: 8px;
+    padding: 8px 0;
     white-space: nowrap;
+    padding-right: 25px;
+    padding-left: 10px;
+}
+
+.option:hover {
+    background-color: #EFEFEF;
 }
 
 .open {

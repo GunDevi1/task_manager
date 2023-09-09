@@ -15,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', IndexController::class)->name('main.index');
+    Route::get('/more', 'IndexController@more')->name('main.more');
+    Route::get('/policy', 'IndexController@policy')->name('main.policy');
+    Route::get('/about', 'IndexController@about')->name('main.about');
+    Route::get('/contacts', 'IndexController@contacts')->name('main.contacts');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Task', 'prefix' => 'tasks', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', IndexController::class)->name('task.index');
     Route::get('/new_task', CreateController::class)->name('task.create');
-    Route::post('/', StoreController::class)->name('task.store');
+    Route::post(    '/', StoreController::class)->name('task.store');
     Route::get('/task-{task}/edit', EditController::class)->name('task.edit');
     Route::patch('/{task}', UpdateController::class)->name('task.update');
     Route::patch('/{task}/attribute', AttributeController::class)->name('task.attribute');

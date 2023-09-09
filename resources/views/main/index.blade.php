@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="#" class="btn btn-outline-light">Узнать больше</a>
+                    <a href="{{ route('main.more') }}" class="btn btn-outline-light">Узнать больше</a>
                 </div>
             </div>
         </section>
@@ -58,27 +58,23 @@
         <section id="testimonials" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-5">Отзывы довольных клиентов</h2>
-                <div class="testimonials d-flex justify-content-between mt-5">
-                    <div class="col-md-5">
-                        <div class="">
-                            <div class="testimonial">
-                                <h4>Отзыв от Ивана</h4>
-                                <p>"Tusk - это именно то, что мне было нужно для эффективного управления моими задачами. Теперь я могу легко создавать списки дел, устанавливать сроки выполнения и отслеживать свой прогресс. Спасибо за такой удобный инструмент!"</p>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="testimonial">
-                                <h4>Отзыв от Анны</h4>
-                                <p>"Я долгое время искала приложение, которое поможет мне организовать мои проекты и задачи. Tusk оказался отличным решением! С его помощью я могу вести несколько задач одновременно и всегда оставаться на пути к достижению своих целей."</p>
-                            </div>
-                        </div>
+                <div class="testimonials row my-5">
+                    <div class="testimonial col-md-6 mb-4 text-center">
+                        <h4>Отзыв от Ивана</h4>
+                        <p>"Tusk - это именно то, что мне было нужно для эффективного управления моими задачами. Теперь я могу легко создавать списки дел, устанавливать сроки выполнения и отслеживать свой прогресс. Спасибо за такой удобный инструмент!"</p>
                     </div>
-                    <div class="col-md-6">
-                        <div class="testimonial-text text-center fs-5">
+                    <div class="testimonial col-md-6 mb-4 text-center">
+                        <h4>Отзыв от Анны</h4>
+                        <p>"Я долгое время искала приложение, которое поможет мне организовать мои проекты и задачи. Tusk оказался отличным решением! С его помощью я могу вести несколько задач одновременно и всегда оставаться на пути к достижению своих целей."</p>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="testimonial-text fs-5">
                             <p>Мы гордимся тем, что наши клиенты довольны нашими продуктами и услугами. Присоединяйтесь к нам сегодня!</p>
                         </div>
                         <div class="text-center">
-                            <a href="#" class="btn send-button">Присоединиться -></a>
+                            <a href="{{ route('task.index') }}" class="btn send-button">Присоединиться -></a>
                         </div>
                     </div>
                 </div>
