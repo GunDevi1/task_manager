@@ -12,7 +12,9 @@
             </div>
             <div class="col-md-6">
                 <h3>Свяжитесь с нами</h3>
-                <form>
+                <form action="{{ route('main.contacts.store') }}" method="POST">
+                    @csrf
+                    @method('POST')
                     <div class="mb-3">
                         <label for="name" class="form-label">Ваше имя</label>
                         <input type="text" class="form-control" id="name" name="name" required>
@@ -22,11 +24,17 @@
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Сообщение</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        <label for="report_content" class="form-label">Сообщение</label>
+                        <textarea class="form-control" id="report_content" name="report_content" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
+
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

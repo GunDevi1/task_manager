@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Админка</title>
+
+    <link rel="icon" href="{{ asset('walrus.ico') }}">
+
+    <title>Админ панель</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
