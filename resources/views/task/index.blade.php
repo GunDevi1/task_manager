@@ -45,22 +45,26 @@
                             @endif
                         </td>
                         <td>
-                            <div class="options-group text-end">
+                            <div class="options-group">
                                 <button type="button" id="group-button" class="bg-transparent border-0"><i
                                         class="fa-solid fa-ellipsis-vertical fs-4"></i></button>
                                 <div class="options" id="block-options">
-                                    <a href="{{ route('task.edit', $task->id) }}"
-                                       class="text-decoration-none text-black"><i
-                                            class="fa-solid fa-pencil text-info fs-4"></i> <span>Изменить</span></a>
-                                    <form action="{{ route('task.destroy', $task->id) }}" method="post"
-                                          class="m-0 mt-3">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="bg-transparent border-0">
-                                            <i class="fa-solid fa-trash text-danger fs-4" role="button"></i>
-                                            <span>Удалить</span>
-                                        </button>
-                                    </form>
+                                    <div class="option">
+                                        <i class="fa-solid fa-pencil text-info fs-4"></i>
+                                        <a href="{{ route('task.edit', $task->id) }}"
+                                           class="text-decoration-none text-black"><span>Изменить</span></a>
+                                    </div>
+                                    <div class="option">
+                                        <i class="fa-solid fa-trash text-danger fs-4" role="button"></i>
+                                        <form action="{{ route('task.destroy', $task->id) }}" method="post"
+                                              class="m-0">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="bg-transparent border-0">
+                                                <span>Удалить</span>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </td>

@@ -6,11 +6,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "google/apiclient": "*",
+        "google/apiclient-services": "^0.314.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
+        "laravel/socialite": "^5.9",
         "laravel/tinker": "^2.8",
-        "laravel/ui": "^4.2"
+        "laravel/ui": "^4.2",
+        "spatie/laravel-google-calendar": "*",
+        "ext-http": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -25,7 +30,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Google\\": "vendor/google/apiclient/src/"
         }
     },
     "autoload-dev": {
@@ -34,6 +40,7 @@
         }
     },
     "scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -49,6 +56,9 @@
         ]
     },
     "extra": {
+        "google/apiclient-services": [
+            "Calendar"
+        ],
         "laravel": {
             "dont-discover": []
         }
@@ -63,5 +73,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    }
 }
