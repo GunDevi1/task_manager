@@ -57,6 +57,23 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small card -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{ $countReports }}</h3>
+
+                            <p>Новых сообщений</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <a href="{{ route('admin.report.index') }}" class="small-box-footer">
+                            Узнать больше <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>

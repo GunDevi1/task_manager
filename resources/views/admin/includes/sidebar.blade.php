@@ -26,6 +26,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.report.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-flag"></i>
+                    <p>
+                        Сообщения
+                    </p>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- /.sidebar -->
