@@ -45,9 +45,16 @@
     color: #58555E;
 }
 
+.options-group {
+    position: relative;
+    text-align: right;
+}
+
 .options {
     display: none;
     position: absolute;
+    top: 100%;
+    right: 0;
     background-color: #F8FAFC;
     padding: 7px 0;
     padding-right: 25px;
@@ -59,6 +66,12 @@
     span {
         margin-left: 10px;
     }
+}
+
+.option {
+    display: flex;
+    margin-bottom: 8px;
+    white-space: nowrap;
 }
 
 .open {
