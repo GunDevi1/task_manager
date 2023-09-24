@@ -12,6 +12,6 @@ class DeleteController extends Controller
     {
         $task->delete();
 
-        return redirect()->route('task.index');
+        return response([]);
     }
 }

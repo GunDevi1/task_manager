@@ -24,8 +24,6 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'nullable|string|max:500',
-            'priority' => 'required|integer|in:1,2,3,4',
-            'deadline' => 'nullable|date|after:now|before_or_equal:'.now()->addYears(5)->format('Y-m-d'),
         ];
     }
 

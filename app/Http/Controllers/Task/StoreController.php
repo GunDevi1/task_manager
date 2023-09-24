@@ -12,8 +12,8 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        Task::create($data);
+        $task = Task::create($data);
 
-        return redirect()->route('task.index');
+        return $task;
     }
 }

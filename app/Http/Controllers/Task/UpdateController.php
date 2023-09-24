@@ -13,7 +13,6 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
         $task->update($data);
-
-        return redirect()->route('task.index');
+        return $task;
     }
 }
