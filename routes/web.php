@@ -26,10 +26,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Task', 'prefix' => 'tasks', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', IndexController::class)->name('task.index');
-    Route::get('/new_task', CreateController::class)->name('task.create');
-    Route::post(    '/', StoreController::class)->name('task.store');
-    Route::get('/task-{task}/edit', EditController::class)->name('task.edit');
-    Route::patch('/{task}', UpdateController::class)->name('task.update');
     Route::patch('/{task}/attribute', AttributeController::class)->name('task.attribute');
     Route::delete('/{task}', DeleteController::class)->name('task.destroy');
 });
